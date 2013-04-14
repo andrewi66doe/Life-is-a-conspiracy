@@ -1,3 +1,5 @@
+#Global configuration file 
+
 secret_key = "development_key"
 USER_DATABASE = "usernames"
 POST_DATABASE = "posts"

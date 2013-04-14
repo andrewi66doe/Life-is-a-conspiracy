@@ -1,0 +1,160 @@
+html, body {
+    height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+/*
+ * Link styling
+ */
+a {
+  color: #000000;
+}
+
+a:active {
+  position: relative;
+  top: 1px;
+}
+a:hover {
+  position:relative;
+  top: 1px;
+}
+ 
+/*
+ * Create dark grey header with a white logo
+ */
+  
+header {
+  background-color: #0A1338;
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+ 
+header h1.logo {
+  margin: 0;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  float: left;
+}
+ 
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+ 
+/*
+ * Center the body content
+ */
+  
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+img.center {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content{
+  margin-left: 50px;
+  text-align: left;
+}
+
+div.display {
+  text-align: center;
+}
+div.title{
+  text-decoration: underline;
+  margin-left:50px;
+}
+div.posttitle{
+  background-color:#C4C4C4;
+  margin-left:65px;
+  margin-right:130px;
+  font-size:28px;
+   -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+
+}
+div.postcontent{
+  margin-left:65px;
+  margin-right:130px;
+  border-bottom: 1px solid #000;
+ } 
+div.jumbo {
+  padding: 10px 0 30px 0;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+ 
+h2 {
+  font-size: 35px;
+  margin-top: 40px;
+  text-align: left;
+  letter-spacing: -2px;
+}
+ 
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+  text-decoration: underline;
+}
+div.links {
+  padding: 10px 50px 30px 50px;
+  background-color: #CFCFCF;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/*
+ * Display navigation links inline
+ */
+ 
+.menu {
+  float: right;
+  margin-top: 8px;
+}
+ 
+.menu li {
+  display: inline;
+}
+ 
+.menu li + li {
+  margin-left: 35px;
+}
+ 
+.menu li a {
+  color: #999;
+  text-decoration: none;
+}
+.menu:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ *Footer
+ */
+div#footer {
+  margin-bottom:30px;
+  margin-top: 15px;
+  border-top: 1px solid #000;
+  height: 35px;
+}
+

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class='display'>
+    <div class='jumbo'>
+    <h1>Login</h1>
+    {% if 'username' in session %}
+        <p>logged in as user: {{session['username']}}</p>
+        <form action="{{url_for('index')}}" method="post">
+            <input type="submit" name="logout" value="logout" />
+        </form>
+    {% else %}
+        <p>A login is required:</p>
+        <form action="{{url_for('index')}}" method="post">
+            <p>Username:<br />
+            <input type="text" name="username" /></p>
+            <p>Password:<br />
+            <input type="password" name="password" /></p>
+            <p><input type="submit" value="submit" /></p>
+        </form>
+    {% endif %}
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endwith %}
+    </div>
+    </div>
+{% endblock %}
+

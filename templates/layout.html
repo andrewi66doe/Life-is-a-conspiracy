@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Control Panel</title>    
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <strong><link rel="stylesheet" href="/static/style.css"></strong>
+    <script type="text/javascript" src="/static/jquery-1.9.1.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("#accordion").accordion();
+	});
+  </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/"><h1 class="logo">Node-Omega</h1></a>
+	<strong><nav>
+         <ul class="menu">
+         <li><a href="{{url_for("tables")}}">Tables</a></li>
+        <li><a href="{{url_for("index")}}">Login</a></li>
+	<li><a href="{{url_for("posts")}}">Posts</a></li>
+        <li><a href="{{url_for('remote')}}">Python</a></li>
+	<li><a href="{{url_for('music')}}">Music</a></li>
+      </ul>
+    </nav></strong>
+      </div>
+     </header>
+    
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="container">
+    <div id="footer">
+    	<p>Node-Omega Debian</p>
+	<p><i>Contact me at contact@lifeisaconspiracy.com</i></p>
+    </div>
+    </div>
+    <!-- Traffic analysis nothing to see here -->
+	<script type="text/javascript">
+	var sc_project=8836738; 
+	var sc_invisible=1; 
+	var sc_security="6132da6a"; 
+	var scJsHost = (("https:" == document.location.protocol) ?
+	"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+	scJsHost+
+	"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<noscript><div class="statcounter"><a title="web statistics"
+	href="http://statcounter.com/free-web-stats/"
+	target="_blank"><img class="statcounter"
+	src="http://c.statcounter.com/8836738/0/6132da6a/1/"
+	alt="web statistics"></a></div></noscript>
+	<!-- End of traffic ananlysis -->
+  </body>
+</html>

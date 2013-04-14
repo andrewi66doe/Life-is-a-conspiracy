@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <div class="jumbo">
+    <div class="title">
+      <h1>Profit-Logs<h1>
+    </div>
+    <div class="content">
+    <p class="content">
+	<table border="1">
+		<tr>
+		<th>Title</th>
+		<th>User</th>
+		<th>Expenses</th>
+		<th>Revenue</th>
+		<th>Profit</th>
+		</tr>
+		{% for stuff in data %}
+		<tr>
+		<td>{{stuff[0]}}</td>
+		<td>{{session['username']}}</td>
+		<td>{{stuff[1]}}</td>
+		<td>{{stuff[2]}}</td>
+		<td>{{profit}}</td>
+		</tr>
+		{% endfor %}
+	</table>    </p>
+    </div>
+  </div>
+{% endblock %}

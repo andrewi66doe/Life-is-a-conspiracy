@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <div class="jumbo">
+    <div class="title">
+      <h1>Posts<h1>
+    </div>
+    <div class="content">
+    {% for post in posts %}
+    <div class='posttitle'>{{post[4]}}-</div>
+    <div class='postcontent'>
+    <p><i>{{post[2]}}   -Posted by {{post[1]}}</i></p>
+    <p>
+	{{post[3]}}
+    </p>
+    </div>
+    {% endfor %}
+	<div class='display'>
+	<form method="post" action="{{url_for('posts')}}">
+	<p>
+	Post title:
+	<input type='text' name='postname'>
+	<input type="submit" value="Submit" />
+	</p>
+	<textarea cols="50" rows="5" name="post">
+	
+	</textarea>
+
+	<br>
+	</form>
+    	</div>
+      </div>
+                {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                                <pre style="margin-left:25px;">
+                                  {% for message in messages %}
+                                {{message}}
+                                  {% endfor %}
+                                </pre>
+                        {% endif %}
+                {% endwith%}
+                </div>
+
+    </div>
+  </div>
+{% endblock %}

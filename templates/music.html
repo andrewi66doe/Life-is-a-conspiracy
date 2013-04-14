@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+		
+		<div class='jumbo'>
+		<div class='title'><h2>Music</h2></div>
+		<div class='display'><audio controls="controls"  autoplay="autoplay" src="{{songs[1]}}"></audio></div>
+		<div class='display'>
+			<button onclick="lastTrack({{songs}})">last</button>
+			<button onclick="nextTrack({{songs}})">next</button>
+			
+		</div>
+		
+		<div class='links'>
+		<div id="menu">
+		<h3>Music</h3>
+		<div class="list">
+		<ul>
+		  {% for song in songs %}
+		  	<li><a onclick="changeTrack('{{song}}')" href="javascript:void(0);">{{song}}</a></li>
+		  {% endfor %}
+		</ul>
+		</div>
+		</div>
+		</div>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				Results:
+				<pre>
+				  {% for message in messages %}
+					{{message}}
+				  {% endfor %}
+				</pre>
+			{% endif %}
+		{% endwith%}
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#menu').accordion({collapsible:true});
+		})
+		var counter = 0;
+		function nextTrack(songs){
+			
+			
+			if(counter==songs.length-1){
+
+					$('audio').attr('src', '/static/music/'+songs[counter]);
+					}
+			else{		
+				if(counter>=0 && counter<songs.length){
+					
+					
+						counter++;
+						$('audio').attr('src', '/static/music/'+songs[counter]);
+					}	
+					}
+			$(document).ready(function(){
+				$('p').remove();
+				$('audio').before("<p><u>Now Playing:</u>"+songs[counter]+"</p>");
+				})
+				}	
+		function lastTrack(songs){
+			
+			if(counter>0 && counter<=songs.length){
+				counter--;
+				$('audio').attr('src', '/static/music/'+songs[counter]);
+				}
+			$(document).ready(function(){
+				$('p').remove();
+				$('audio').before("<p><u>Now Playing:</u>"+songs[counter]+"</p>");
+				})
+				}
+        function changeTrack(song){
+            $('audio').attr('src', '/static/music/'+song);
+        };
+    </script>
+
+		
+{% endblock %}

@@ -15,12 +15,12 @@
 		<th>Revenue</th>
 		<th>Profit</th>
 		</tr>
-		{% for stuff in data %}
+		{% for table_data in data %}
 		<tr>
-		<td>{{stuff[0]}}</td>
+		<td>{{table_data[0]}}</td>
 		<td>{{session['username']}}</td>
-		<td>{{stuff[1]}}</td>
-		<td>{{stuff[2]}}</td>
+		<td>{{table_data[1]}}</td>
+		<td>{{table_data[2]}}</td>
 		<td>{{profit}}</td>
 		</tr>
 		{% endfor %}

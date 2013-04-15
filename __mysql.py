@@ -63,7 +63,7 @@ def clear_all_posts(username):
 def read_table_data():
 	tabledb = mysql.connect(settings.DATABASE_LOCATION,
 						   settings.USERNAME,
-						   settings.passsword,
+						   settings.PASSWORD,
 						   settings.TABLE_DATA)
 	tabledb.query("select * from data")
 	tb = tabledb.store_result().fetch_row(maxrows=0)
